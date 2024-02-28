@@ -1,5 +1,11 @@
 @import "reset";
+@import "variables/global";
+@import "themes/dark";
+@import "themes/light";
 
 .App {
     min-height: 100vh; // растягивание контента в App на всю высоту
+    font: var(--font-m);
+    background: var(--bg-color);
+    color: var(--primary-color);
 }
