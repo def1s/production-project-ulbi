@@ -12,7 +12,7 @@ export const BuildWebpackConfig = (options: BuildOptions) => {
 		module: {
 			rules: BuildLoaders(options)
 		},
-		resolve: BuildResolvers(),
+		resolve: BuildResolvers(options),
 		entry: paths.entry,
 		output: {
 			filename: 'main.js',
