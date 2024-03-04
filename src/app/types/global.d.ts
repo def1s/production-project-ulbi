@@ -3,3 +3,12 @@ declare module '*.scss' { // декларация для css modules на имп
 	const classNames: IClassNames;
 	export = classNames
 }
+
+declare module '*.svg' {
+	const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+	export default content;
+}
+declare module '*.png';
+declare module '*.jpeg';
+declare module '*.jpg';
+declare module '*.gif';
