@@ -1,11 +1,18 @@
 .Button {
     cursor: pointer;
+    color: var(--primary-color);
 }
 
 .clear {
     background: none;
     border: none;
     outline: none;
-    margin: 0;
     padding: 0;
+}
+
+.onlyBorder {
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+    background: none;
 }
