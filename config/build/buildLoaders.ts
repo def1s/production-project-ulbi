@@ -10,6 +10,17 @@ export const BuildLoaders = ({ isDev }: BuildOptions) => {
 		exclude: /node_modules/,
 	};
 
+	const babelLoader = {
+		test: /\.(js|jsx|tsx)$/,
+		exclude: /node_modules/,
+		use: {
+			loader: 'babel-loader',
+			options: {
+				presets: ['@babel/preset-env']
+			}
+		}
+	};
+
 	const scssLoader = {
 		test: /\.s[ac]ss$/i,
 		use: [
@@ -46,6 +57,7 @@ export const BuildLoaders = ({ isDev }: BuildOptions) => {
 	return [
 		fileLoader,
 		svgLoader,
+		babelLoader,
 		tsLoader,
 		scssLoader
 	];
