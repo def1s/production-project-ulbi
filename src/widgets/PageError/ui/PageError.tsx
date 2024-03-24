@@ -19,7 +19,7 @@ export const PageError = ({ className }: PageErrorProps) => {
 			<p>{t('Произошла непредвиденная ошибка!')}</p>
 			<Button
 				onClick={onReloadPage}
-				theme={ThemeButton.ONLY_BORDER}
+				theme={ThemeButton.OUTLINE}
 			>
 				{t('Перезагрузить страницу')}
 			</Button>

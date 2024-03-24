@@ -2,3 +2,6 @@
 .DS_Store
 .idea
 /build
+
+*storybook.log
+/storybook-static

@@ -1,11 +1,15 @@
-import type { Config } from 'jest';
+import path from 'path';
 
-const config: Config = {
+export default {
+	// автоматическое очищение моков
 	clearMocks: true,
+	// среда для запуска тестов
 	testEnvironment: 'jsdom',
+	// игнорирование путей
 	coveragePathIgnorePatterns: [
 		'\\\\node_modules\\\\',
 	],
+	// файлы, которые jest будет обрабатывать
 	moduleFileExtensions: [
 		'js',
 		'jsx',
@@ -14,24 +18,24 @@ const config: Config = {
 		'json',
 		'node',
 	],
+	// директория с модулями
 	moduleDirectories: [
 		'node_modules'
 	],
+	// шаблон, по которому jest ищет файлы для теста
 	testMatch: [
 		'<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
 	],
+	// указание корневой директории
 	rootDir: '../../',
 	modulePaths: [
 		'<rootDir>src'
 	],
-
-	/* абсолютные импорты в тестах так и не заработали, не помог ни один способ решения, пока что буду без них */
-
-	// moduleNameMapper: {
-	// 	'^src/(.*)$': [
-	// 		'<rootDir>/src/$1'
-	// 	],
-	// },
+	// файлы, которые нужно включить в тестирование
+	setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+	// сопоставление файлов и моков
+	moduleNameMapper: {
+		'\\.(s?css)$': 'identity-obj-proxy',
+		'\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+	},
 };
-
-export default config;
