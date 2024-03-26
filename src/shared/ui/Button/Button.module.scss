@@ -3,20 +3,31 @@
     color: var(--primary-color);
 }
 
-.clear {
+.clear,
+.clearInverted {
     background: none;
     border: none;
     outline: none;
     padding: 0;
 }
 
-.outline {
+.clearInverted {
+    color: var(--inverted-primary-color);
+}
+
+.outline,
+.outlineInverted {
     padding: 5px;
     border-style: solid;
     border-width: 1px;
     border-color: var(--primary-color);
     color: var(--primary-color);
     background: none;
+}
+
+.outlineInverted {
+    border-color: var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
 }
 
 .background {

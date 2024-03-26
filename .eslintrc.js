@@ -3,7 +3,12 @@ module.exports = {
 		'browser': true,
 		'es2021': true
 	},
-	'extends': ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'plugin:storybook/recommended'],
+	'extends': [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:react/recommended',
+		'plugin:storybook/recommended'
+	],
 	'overrides': [
 		{
 			'env': {
@@ -24,7 +29,8 @@ module.exports = {
 	},
 	'plugins': [
 		'@typescript-eslint',
-		'react'
+		'react',
+		'react-hooks'
 	],
 	'rules': {
 		'indent': [
@@ -46,6 +52,8 @@ module.exports = {
 		'react/react-in-jsx-scope': 'off',
 		'no-unused-vars': 'warn',
 		'object-curly-spacing': ['error', 'always'],
-		'@typescript-eslint/no-unused-vars': 'warn'
+		'@typescript-eslint/no-unused-vars': 'warn',
+		'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+		'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
 	}
 };
